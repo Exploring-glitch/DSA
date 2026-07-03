@@ -1,8 +1,8 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        //Better Approach: Hashing
-        //TC=O(), SC=O()
+        //Better Approach: Hash-map
+        //TC=O(N), SC=O(N)
         int n = nums.size();
         unordered_map<int, int> m;
 
