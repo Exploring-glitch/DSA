@@ -2,7 +2,7 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         //Optimal Solution: Moore's Voting Algorithm
-        //TC=O(), SC=O()
+        //TC=O(N), SC=O(1)
         int n = nums.size();
         int count = 0;
         int ele;
