@@ -1,10 +1,34 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        //Better Approach: Hashinh
+        //Optimal Solution: Moore's Voting Algorithm
         //TC=O(), SC=O()
-
         int n = nums.size();
+        int count = 0;
+        int ele;
+
+        for(int i=0; i<n; i++) {
+            if(count == 0) {
+                count = 1;
+                ele = nums[i];
+            }
+            else if(nums[i] == ele) {
+                count++;
+            }
+            else {
+                count--;
+            }
+        }
+
+        return ele;
+
+
+
+
+
+        //Better Approach: Hashing
+        //TC=O(2N), SC=O(N)
+        /*int n = nums.size();
         unordered_map<int,int> mpp;
         
         for(int i = 0; i<n; i++){
@@ -13,11 +37,10 @@ public:
 
         for(auto i : mpp){
             if(i.second > n/2) {
-                int ans = i.first;
-                return ans;
+                return i.first;
             }
         }
-        return{};
+        return{};*/
 
 
         //Brute Force Approach
@@ -32,7 +55,7 @@ public:
             }
 
             if (freq > n/2){
-                return{i};
+                return i;
             }
         }
         return{};*/
