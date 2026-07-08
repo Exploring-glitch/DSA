@@ -9,7 +9,7 @@ public:
         int lastSmaller = INT_MIN;
         int count  = 0, length = 1;
 
-        if(n == 0) {
+        if(n == 0) { //if array is empty
             return 0;
         }
         for(int i=0; i<n; i++) { //runs N times
