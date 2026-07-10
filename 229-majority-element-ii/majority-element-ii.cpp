@@ -6,17 +6,19 @@ public:
         unordered_map<int, int> mpp;
         vector<int> ans;
         int n = nums.size();
+        int minValue = (n/3) + 1;
 
         for(int i=0; i<n; i++) {
             mpp[nums[i]]++; 
-        }
 
-        for(auto i : mpp) {
-            if(i.second > (n/3)) {
-                ans.push_back(i.first);
+            if(mpp[nums[i]] == minValue) {
+                ans.push_back(nums[i]);
+            }
+
+            if(ans.size() == 2) {
+                break;
             }
         }
-
         sort(ans.begin(), ans.end());
         return ans;
 
