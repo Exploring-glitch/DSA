@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
         //Brute Force Approach
-
+        //TC=O(N^2), SC=O(1)
         vector<int> ans;
         int n = nums.size();
 
