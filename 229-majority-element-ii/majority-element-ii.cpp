@@ -1,8 +1,27 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
+        //Optimal Approach
+        unordered_map<int, int> mpp;
+        vector<int> ans;
+        int n = nums.size();
+
+        for(int i=0; i<n; i++) {
+            mpp[nums[i]]++; 
+        }
+
+        for(auto i : mpp) {
+            if(i.second > (n/3)) {
+                ans.push_back(i.first);
+            }
+        }
+
+        return ans;
+
+
         //Brute Force Approach
         //TC=O(N^2), SC=O(1)
+        /*
         vector<int> ans;
         int n = nums.size();
 
@@ -21,5 +40,6 @@ public:
         }
 
         return ans;
+        */
     }
 };
