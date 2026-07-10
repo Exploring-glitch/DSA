@@ -1,7 +1,8 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
-        //Optimal Approach
+        //Optimal Approach: using hashmap
+        //TC=O(2N), SC=O(N)
         unordered_map<int, int> mpp;
         vector<int> ans;
         int n = nums.size();
@@ -16,6 +17,7 @@ public:
             }
         }
 
+        sort(ans.begin(), ans.end());
         return ans;
 
 
