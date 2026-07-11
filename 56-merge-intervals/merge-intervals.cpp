@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         //Optimal Solution
+        //TC=O(N logN + N), SC=O(N)
         int n = intervals.size();
         vector<vector<int>> ans;
         sort(intervals.begin(), intervals.end()); //takes N logN time
