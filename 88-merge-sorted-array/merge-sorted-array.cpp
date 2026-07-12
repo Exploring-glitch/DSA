@@ -3,8 +3,9 @@ public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         //Optimal Solution
         // TC=O(M+N), SC=O(1)
-        
-        int left = m-1; int right = n-1, index = m+n-1;
+        int left = m-1; 
+        int right = n-1;
+        int index = m+n-1;
 
         while(left >= 0 && right >= 0) {
             if(nums1[left] > nums2[right]) {
@@ -22,7 +23,7 @@ public:
         }
 
 
-        
+
         //Brute Force Approach: Using an extra array
         //TC=2*O(N+M), SC=O(N+M)
         /*
