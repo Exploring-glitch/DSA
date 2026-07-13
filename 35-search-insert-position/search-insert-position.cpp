@@ -1,7 +1,8 @@
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-        //Find the lower bound
+        //using lower bound
+        //TC=O(LOGN), SC=O(1)        
         int n = nums.size();
         int low = 0;
         int high = n-1;
