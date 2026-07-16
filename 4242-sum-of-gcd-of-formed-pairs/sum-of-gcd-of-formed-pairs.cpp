@@ -11,7 +11,6 @@ public:
 
         sort(nums.begin(),nums.end()); 
 
-
         //forming pairs and performing GCD on each pairs
         int left = 0, right = n-1;
         long long sum = 0;
