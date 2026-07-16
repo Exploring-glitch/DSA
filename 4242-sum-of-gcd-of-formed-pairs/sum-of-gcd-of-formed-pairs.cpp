@@ -8,25 +8,23 @@ public:
         }
         return a;
     }
-
+    
     long long gcdSum(vector<int>& nums) {
         int n = nums.size();
         int mx = INT_MIN;
-        vector<int> prefixGCD;
         for(int i=0; i<n; i++) {
             mx = max(mx, nums[i]);
             int ans = gcdFunc(mx, nums[i]);
-            prefixGCD.push_back(ans);
+            nums[i] = ans;
         }
 
-        //sorting the prefixGCD
-        sort(prefixGCD.begin(),prefixGCD.end()); 
+        sort(nums.begin(),nums.end()); 
 
         //forming pairs and performing GCD on each pairs
-        int left = 0, right = prefixGCD.size()-1;
+        int left = 0, right = n-1;
         vector<int> gcdOfPairs;
         while(left < right) {
-            int ans = gcdFunc(prefixGCD[left], prefixGCD[right]); 
+            int ans = gcdFunc(nums[left], nums[right]); 
             gcdOfPairs.push_back(ans);
             left++;
             right--;
