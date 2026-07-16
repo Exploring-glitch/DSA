@@ -12,14 +12,20 @@ public:
         sort(nums.begin(),nums.end()); 
 
 
-        //forming pairs and performing GCD on each pairs and adding them simultaneously.
+        //forming pairs and performing GCD on each pairs
         int left = 0, right = n-1;
-        long long sum = 0;
+        vector<int> gcdOfPairs;
         while(left < right) {
             int ans = gcd(nums[left], nums[right]); 
-            sum += ans;
+            gcdOfPairs.push_back(ans);
             left++;
             right--;
+        }
+
+        //adding the elements stored in gcdOfPairs
+        long long sum = 0;
+        for(int i=0; i<gcdOfPairs.size(); i++) {
+            sum += gcdOfPairs[i];
         }
 
         return sum;
