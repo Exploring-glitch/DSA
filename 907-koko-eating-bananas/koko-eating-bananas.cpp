@@ -1,5 +1,13 @@
 class Solution {
 public:
+    int maxVal (vector<int> piles) {
+        int ans = INT_MIN;
+        for(int i=0; i<piles.size(); i++) {
+            ans = max(ans, piles[i]);
+        }
+        return ans;
+    }
+
     long long calHours(vector<int>& piles, int mid) {
         long long ans = 0;
         for(int i=0; i<piles.size(); i++) {
@@ -8,10 +16,8 @@ public:
         return ans;
     }
 
-    int minEatingSpeed(vector<int>& piles, int h) {
-        sort(piles.begin(), piles.end()); //nlogn
-        int n = piles.size();
-        int low = 1, high = piles[n-1];
+    int minEatingSpeed(vector<int>& piles, int h) {  
+        int low = 1, high = maxVal(piles);;
 
         while(low <= high) {
             int mid = (low + high) / 2;
