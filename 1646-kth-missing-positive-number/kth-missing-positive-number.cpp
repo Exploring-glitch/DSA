@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findKthPositive(vector<int>& arr, int k) {
+        //TC=O(LOG N), SC=O(1)
         int n = arr.size();
         int low = 0, high = n-1;
 
