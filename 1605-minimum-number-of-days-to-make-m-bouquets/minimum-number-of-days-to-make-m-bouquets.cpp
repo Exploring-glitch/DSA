@@ -31,9 +31,9 @@ public:
         int high = maxi;
         int ans = high;
 
-        while(low <= high) {
+        while(low <= high) { //log n 
             int mid = (low + high) / 2;
-            if(possibleFunc(bloomDay, mid, m, k) == true) {
+            if(possibleFunc(bloomDay, mid, m, k) == true) { //n
                 ans = mid;
                 high = mid-1;
             }
