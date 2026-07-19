@@ -17,6 +17,7 @@ public:
     }
 
     int shipWithinDays(vector<int>& weights, int days) {
+        //TC=O(N log (sum-maxi+1)), SC=O(1)
         int n = weights.size();
         int maxi = INT_MIN;
         int sum = 0;
@@ -29,9 +30,9 @@ public:
         int low = maxi;
         long long high = sum;
 
-        while(low <= high) {
+        while(low <= high) { //runs (sum-maxi+1) times
             long long mid = (low+high)/2;
-            int daysReq = daysReqFunc(weights, mid);
+            int daysReq = daysReqFunc(weights, mid); //runs n times
             if(daysReq <= days) {
                 high = mid-1;
             }
