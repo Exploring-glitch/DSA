@@ -17,6 +17,7 @@ public:
     }
 
     int splitArray(vector<int>& nums, int k) {
+        //TC= O(N * log(sum of array - max element + 1), SC=O(1)
         int maxi = INT_MIN;
         int sum = 0;
         for(int i=0; i<nums.size(); i++) {
