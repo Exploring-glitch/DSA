@@ -46,6 +46,7 @@ public :
 
 
 int main() {
+    //TC= O(N * log(sum of array - max element + 1), SC=O(1)
     Allocation a;
     vector<int> arr = {12,36,64,90};
     int students = 2;
