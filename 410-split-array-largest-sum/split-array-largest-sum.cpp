@@ -1,18 +1,18 @@
 class Solution {
 public:
     bool isSubarrayPossible(vector<int>arr, int mid, int k) {
-        int pages = 0;
-        int numberOfStudents = 1; 
+        int eleSum = 0;
+        int numberOfSubarrays = 1; 
         for(int i=0; i<arr.size(); i++) {
-            if(pages + arr[i] > mid) {
-                numberOfStudents++;
-                pages = arr[i];
+            if(eleSum + arr[i] > mid) {
+                numberOfSubarrays++;
+                eleSum = arr[i];
             }
             else {
-                pages += arr[i];
+                eleSum += arr[i];
             }
         }
-        if(numberOfStudents > k) return false;
+        if(numberOfSubarrays > k) return false;
         return true;
     }
 
