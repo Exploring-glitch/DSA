@@ -20,7 +20,7 @@ public:
     }
 
     int rowWithMax1s(vector<vector<int>> &matrix, int n, int m) {
-        //Optimized Solution: TC= O(N+M), SC=O(1)
+        //Optimized Solution: TC= O(N*LogM), SC=O(1)
         int maxCnt = 0;
         int idx = -1;
 
