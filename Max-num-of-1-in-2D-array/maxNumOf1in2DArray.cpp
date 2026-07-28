@@ -3,7 +3,39 @@ using namespace std;
 
 class Solution {
 public:
+    int lowerBound(vector<int> &nums, int m, int x) {
+        int low = 0, high = m - 1;
+        int ans = m;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (nums[mid] >= 1) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return ans;
+    }
+
     int rowWithMax1s(vector<vector<int>> &matrix, int n, int m) {
+        //Optimized Solution: TC= O(N+M), SC=O(1)
+        int maxCnt = 0;
+        int idx = -1;
+
+        for(int i=0; i<n; i++) {
+            int x = lowerBound(matrix[i], m, 1);
+            int cnt = m - x;
+            if(cnt > maxCnt) {
+                maxCnt = cnt;
+                idx = i;
+            }
+        }
+        return idx;
+
+
+
         //Brute Force Solution: TC= O(N*M), SC=O(1)
         /*
         int maxCnt = INT_MIN;
