@@ -1,7 +1,7 @@
 class Solution {
 public:
     string largestOddNumber(string num) {
-        //TC=O(), SC=O()
+        //TC=O(N), SC=O(N)
         int idx = -1;
         for(int i=num.length()-1; i>=0; i--) {
             if((num[i] - '0') % 2 == 1) {
