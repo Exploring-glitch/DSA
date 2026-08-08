@@ -11,7 +11,7 @@ public:
         string ans = "";
 
         for(int i=0; i<first.length(); i++) {
-            if(i >= last.length() || first[i] != last[i]) break; // 
+            if(i >= last.length() || first[i] != last[i]) break; 
             ans.push_back(first[i]);
         }
         return ans;
