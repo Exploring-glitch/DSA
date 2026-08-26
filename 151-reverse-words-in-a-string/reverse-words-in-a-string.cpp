@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string (reverseWords(string s)) {
+    string reverseWords(string s) {
         //TC=O(N) where n is the length of string
         //SC=0(1)
 
