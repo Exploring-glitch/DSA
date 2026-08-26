@@ -1,7 +1,8 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        //TC=O(N) where N is the length of an input string, SC=O(1)
+        //TC=O(N) where N is the length of an input string
+        // SC=O(1)
         int arr1[256] = {0};
         int arr2[256] = {0};
 
