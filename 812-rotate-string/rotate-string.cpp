@@ -1,15 +1,15 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
-        //Optimal Solution
+        //ANOTHER Solution
+        //TC=O(N^2), SC=O(N)
         if(s.length() != goal.length()) return false;
         if(s == goal) return true;
-        string newString = s + s;
-
-        if(newString.find(goal) == string::npos) return false; //
+        string newString = s + s; //double the string eg.- s=abc newString=abcabc
+       
+        //find goal in the doubled string. If not found, find() returns no position found i.e npos
+        if(newString.find(goal) == string::npos) return false; 
         return true;
-
-
 
 
 
