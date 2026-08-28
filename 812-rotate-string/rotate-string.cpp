@@ -1,8 +1,21 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
+        //Optimal Solution
+        if(s.length() != goal.length()) return false;
+        if(s == goal) return true;
+        string newString = s + s;
+
+        if(newString.find(goal) == string::npos) return false; //
+        return true;
+
+
+
+
+
         //Brute Force Solution
         //TC=O(N^2), SC=O(1)
+        /*
         if(s.length() != goal.length()) return false;
         if(s == goal) return true;
 
@@ -13,5 +26,6 @@ public:
             if(s == goal) return true; //O(n) times
         }
         return false;
+        */
     }
 };
