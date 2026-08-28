@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isAnagram(string s, string t) {
         //Optimal Solution:
-        //TC=O(), SC=O()
+        //TC=O(N), SC=O(1)
         int freq[26] = {0};
         if(s.length() != t.length()) return false;
 
