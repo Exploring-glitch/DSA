@@ -1,7 +1,7 @@
 class Solution {
 public:
     string frequencySort(string s) {
-        //Brute fOrce Solution: TC=O(), SC=O()
+        //Brute fOrce Solution: TC=O(N^2 + N), SC=O()
         unordered_map<char, int> mp; //
         for(auto ch : s) {
             mp[ch]++;
