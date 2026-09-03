@@ -1,7 +1,7 @@
 class Solution {
 public:
     string frequencySort(string s) {
-        
+        //Optimal Solution: TC=O(), SC=O()
         unordered_map<char, int> freq;
 
         // Count frequency
@@ -24,7 +24,6 @@ public:
                 ans += string(i, ch);
             }
         }
-
         return ans;
 
         /*
@@ -46,7 +45,7 @@ public:
 
         string ans = "";
         for(auto i : v) { //N
-            ans += string(i.second, i.first);
+            ans += string(i.second, i.first); //string(2, 'e') = 'ee'
         }
 
         return ans;
